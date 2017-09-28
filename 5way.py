@@ -9,12 +9,13 @@ from time import sleep # sleep 함수 사용위해 time module import함
 
 GPIO.setmode(GPIO.BOARD)  # Board Mode and BCM Mode
 
-# Vcc = 1 # # Raspberry Pi GPIO 1 번과 연결
-OTD = 16  # Raspberry Pi GPIO 16 번과 연결
-OTB = 18  # Raspberry Pi GPIO 18 번과 연결
-OTA = 22  # Raspberry Pi GPIO 22 번과 연결
-OTC = 40  # Raspberry Pi GPIO 40 번과 연결
-OTE = 32  # Raspberry Pi GPIO 32 번과 연결
+# Vcc = 1, 5방향 추적센서의 Vcc output핀은 Raspberry Pi GPIO 1 번과 연결
+# 전원은 아래의 OTD, OTB처럼 따로 제어할 이유가 없음
+OTD = 16  # 5방향 추적센서의 OTD output핀은 Raspberry Pi GPIO 16 번과 연결
+OTB = 18  # 5방향 추적센서의 OTB output핀은 Raspberry Pi GPIO 18 번과 연결
+OTA = 22  # 5방향 추적센서의 OTA output핀은 Raspberry Pi GPIO 22 번과 연결
+OTC = 40  # 5방향 추적센서의 OTC output핀은 Raspberry Pi GPIO 40 번과 연결
+OTE = 32  # 5방향 추적센서의 OTE output핀은  Raspberry Pi GPIO 32 번과 연결
 
 GPIO.setup(OTD, GPIO.IN)  # OTD에서 오는 데이터를 Raspberry Pi GPIO 16번 핀 입력으로 받음
 GPIO.setup(OTB, GPIO.IN)  # OTB에서 오는 데이터를 Raspberry Pi GPIO 18번 핀 입력으로 받음
