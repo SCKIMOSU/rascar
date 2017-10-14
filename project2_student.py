@@ -2,11 +2,7 @@
 ### Date: 2017/10/1
 ### Purpose: this code has been generated for the three-wheeled moving
 ###         object to go forward and backward
-<<<<<<< HEAD
 ### this code is used for the student only
-=======
-### this code is used for the professor only
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
 ######################################################################
 
 # import GPIO  library
@@ -84,37 +80,21 @@ MotorRight_PWM = 37
 
 def leftmotor(x):
 	if x == 'True':
-<<<<<<< HEAD
 		GPIO.output(MotorLeft_A, GPIO.HIGH)
 		GPIO.output(MotorLeft_B, GPIO.LOW)
 	elif x == 'False':
 		GPIO.output(MotorLeft_A, GPIO.LOW)
 		GPIO.output(MotorLeft_B, GPIO.HIGH)
-=======
-		GPIO.output(MotorLeft_A, GPIO.LOW)
-		GPIO.output(MotorLeft_B, GPIO.HIGH)
-	elif x == 'False':
-		GPIO.output(MotorLeft_A, GPIO.HIGH)
-		GPIO.output(MotorLeft_B, GPIO.LOW)
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
 	else:
 		print 'Config Error'
 
 def rightmotor(x):
 	if x == 'True':
-<<<<<<< HEAD
 		GPIO.output(MotorRight_A, GPIO.LOW)
 		GPIO.output(MotorRight_B, GPIO.HIGH)
 	elif x == 'False':
 		GPIO.output(MotorRight_A, GPIO.HIGH)
 		GPIO.output(MotorRight_B, GPIO.LOW)
-=======
-		GPIO.output(MotorRight_A, GPIO.HIGH)
-		GPIO.output(MotorRight_B, GPIO.LOW)
-	elif x == 'False':
-		GPIO.output(MotorRight_A, GPIO.LOW)
-		GPIO.output(MotorRight_B, GPIO.HIGH)
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
 
 
 # =======================================================================
@@ -155,34 +135,32 @@ RightPwm=GPIO.PWM(MotorRight_PWM,100)
 def go_forward(speed, running_time):
     # set the left motor to go forward
     leftmotor(forward0)
-<<<<<<< HEAD
+    #GPIO.output(MotorLeft_A,GPIO.HIGH)
+    #GPIO.output(MotorLeft_B,GPIO.LOW)
+
     #------------------------------------------------------------
     # if you have different direction, you need to change HIGH to LOW
     # in MotorLeft_A and MotorLeft_B 
     # or use leftmotor(forward1)
     #------------------------------------------------------------
     #leftmotor(forward1)
-=======
-    leftmotor(forward1)
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
-    #GPIO.output(MotorLeft_A,GPIO.HIGH)
-    #GPIO.output(MotorLeft_B,GPIO.LOW)
+
+
     GPIO.output(MotorLeft_PWM,GPIO.HIGH)
     
     # set the right motor to go forward
     rightmotor(forward0)
-<<<<<<< HEAD
+    #GPIO.output(MotorRight_A,GPIO.LOW)
+    #GPIO.output(MotorRight_B,GPIO.HIGH)
+
     #------------------------------------------------------------
     # if you have different direction, you need to change HIGH to LOW
     # in MotorLeft_A and MotorLeft_B 
     # or use rightmotor(forward1)
     #------------------------------------------------------------
     #rightmotor(forward1)
-=======
-    rightmotor(forward1)
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
-    #GPIO.output(MotorRight_A,GPIO.LOW)
-    #GPIO.output(MotorRight_B,GPIO.HIGH)
+
+
     GPIO.output(MotorRight_PWM,GPIO.HIGH)
     # set the speed of the left motor to go forward
     LeftPwm.ChangeDutyCycle(speed)
@@ -252,7 +230,3 @@ except KeyboardInterrupt:
     # GPIO pin setup has been cleared
     GPIO.cleanup()
 # =======================================================================
-<<<<<<< HEAD
-=======
-
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
