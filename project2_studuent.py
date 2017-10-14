@@ -1,15 +1,11 @@
 ######################################################################
-### Date: 2017/10/1
+### Date: 2019/10/1
 ### Purpose: this code has been generated for the three-wheeled moving
 ###         object to go forward and backward
-<<<<<<< HEAD
-### this code is used for the student only
-=======
 ### this code is used for the professor only
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
 ######################################################################
 
-# import GPIO  library
+# import GPIO librery
 import RPi.GPIO as GPIO 
 from time import sleep
 
@@ -17,7 +13,7 @@ from time import sleep
 GPIO.setmode(GPIO.BOARD)
 
 
-# set GPIO warnings as false
+# set GPIO warnings as flase
 GPIO.setwarnings(False)
 
 # =======================================================================
@@ -42,28 +38,28 @@ backward1 = REVERSE(forward1)
 # =======================================================================
 
 # =======================================================================
-# declare the pins of 12, 11, 35 in the Raspberry Pi
+# declare the pins of 12, 11, 35 in the Rapberry Pi
 # as the left motor control pins in order to control left motor
 # left motor needs three pins to be controlled
 
 # (this codes includes
-# the initialization the connection between left motor and Raspberry Pi)
+# the initialization the connection between left motor and Rapberry Pi)
 # (this codes includes
-# the connection between left motor and Raspberry Pi by software)
+# the connection between left motor and Rapberry Pi by software)
 # =======================================================================
 MotorLeft_A = 12 
 MotorLeft_B = 11
 MotorLeft_PWM = 35
 
 # =======================================================================
-# declare the pins of 15, 13, 37 in the Raspberry Pi
+# declare the pins of 15, 13, 37 in the Rapberry Pi
 # as the right motor control pins in order to control right motor
 # right motor needs three pins to be controlled
 
 # (this codes includes
-# the initialization the connection between right motor and Raspberry Pi
+# the initialization the connection between right motor and Rapberry Pi
 # (this codes includes
-# the connection between right motor and Raspberry Pi by software
+# the connection between right motor and Rapberry Pi by software
 # =======================================================================
 
 MotorRight_A = 15 
@@ -84,42 +80,26 @@ MotorRight_PWM = 37
 
 def leftmotor(x):
 	if x == 'True':
-<<<<<<< HEAD
-		GPIO.output(MotorLeft_A, GPIO.HIGH)
-		GPIO.output(MotorLeft_B, GPIO.LOW)
-	elif x == 'False':
-		GPIO.output(MotorLeft_A, GPIO.LOW)
-		GPIO.output(MotorLeft_B, GPIO.HIGH)
-=======
 		GPIO.output(MotorLeft_A, GPIO.LOW)
 		GPIO.output(MotorLeft_B, GPIO.HIGH)
 	elif x == 'False':
 		GPIO.output(MotorLeft_A, GPIO.HIGH)
 		GPIO.output(MotorLeft_B, GPIO.LOW)
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
 	else:
 		print 'Config Error'
 
 def rightmotor(x):
 	if x == 'True':
-<<<<<<< HEAD
-		GPIO.output(MotorRight_A, GPIO.LOW)
-		GPIO.output(MotorRight_B, GPIO.HIGH)
-	elif x == 'False':
-		GPIO.output(MotorRight_A, GPIO.HIGH)
-		GPIO.output(MotorRight_B, GPIO.LOW)
-=======
 		GPIO.output(MotorRight_A, GPIO.HIGH)
 		GPIO.output(MotorRight_B, GPIO.LOW)
 	elif x == 'False':
 		GPIO.output(MotorRight_A, GPIO.LOW)
 		GPIO.output(MotorRight_B, GPIO.HIGH)
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
 
 
 # =======================================================================
-# because the connections between motors (left motor) and Raspberry Pi will be
-# established, the being connected GPIO pins of Raspberry Pi
+# because the connetions between motors (left motor) and Rapberry Pi will be 
+# established, the being connected GPIO pins of Rapberry Pi
 # such as MotorLeft_A, MotorLeft_B, and MotorLeft_PWM
 # should be clearly declared whether their roles of pins
 # are output pin or input pin
@@ -129,8 +109,8 @@ GPIO.setup(MotorLeft_B,GPIO.OUT)
 GPIO.setup(MotorLeft_PWM,GPIO.OUT)
 
 # =======================================================================
-# because the connections between motors (right motor) and Raspberry Pi will be
-# established, the being connected GPIO pins of Raspberry Pi
+# because the connetions between motors (right motor) and Rapberry Pi will be 
+# established, the being connected GPIO pins of Rapberry Pi
 # such as MotorLeft_A, MotorLeft_B, and MotorLeft_PWM
 # should be clearly declared whether their roles of pins
 # are output pin or input pin
@@ -150,45 +130,27 @@ LeftPwm=GPIO.PWM(MotorLeft_PWM,100)
 RightPwm=GPIO.PWM(MotorRight_PWM,100) 
 
 # =======================================================================
-# define the forward module
+# define the fowrard module
 # forward has the parameters of speed and running_time 
 def go_forward(speed, running_time):
-    # set the left motor to go forward
+    # set the left motor to go fowrard
     leftmotor(forward0)
-<<<<<<< HEAD
-    #------------------------------------------------------------
-    # if you have different direction, you need to change HIGH to LOW
-    # in MotorLeft_A and MotorLeft_B 
-    # or use leftmotor(forward1)
-    #------------------------------------------------------------
-    #leftmotor(forward1)
-=======
     leftmotor(forward1)
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
     #GPIO.output(MotorLeft_A,GPIO.HIGH)
     #GPIO.output(MotorLeft_B,GPIO.LOW)
     GPIO.output(MotorLeft_PWM,GPIO.HIGH)
     
-    # set the right motor to go forward
+    # set the right motor to go fowrard
     rightmotor(forward0)
-<<<<<<< HEAD
-    #------------------------------------------------------------
-    # if you have different direction, you need to change HIGH to LOW
-    # in MotorLeft_A and MotorLeft_B 
-    # or use rightmotor(forward1)
-    #------------------------------------------------------------
-    #rightmotor(forward1)
-=======
     rightmotor(forward1)
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
     #GPIO.output(MotorRight_A,GPIO.LOW)
     #GPIO.output(MotorRight_B,GPIO.HIGH)
     GPIO.output(MotorRight_PWM,GPIO.HIGH)
-    # set the speed of the left motor to go forward
+    # set the speed of the left motor to go fowrard
     LeftPwm.ChangeDutyCycle(speed)
-    # set the speed of the right motor to go forward
+    # set the speed of the right motor to go fowrard 
     RightPwm.ChangeDutyCycle(speed)
-    # set the running time of the left motor to go forward
+    # set the running time of the left motor to go fowrard
     sleep(running_time)
 # =======================================================================
 
@@ -196,7 +158,7 @@ def go_forward(speed, running_time):
 # define the backward module
 # backward has the parameters of speed and delay (time)
 def go_backward(speed, running_time):
-    # set the right motor to go backward
+    # set the right motor to be backwarded
 
 
 
@@ -220,7 +182,7 @@ def stop():
 # =======================================================================
 # mission has been started as below
 try:
-    # setup and initialize the left motor and right motor
+    # setup and initilaize the left motor and right motor
     LeftPwm.start(0)
     RightPwm.start(0)
     # command for forwarding with speed of 40 and time 3 seconds
@@ -252,7 +214,4 @@ except KeyboardInterrupt:
     # GPIO pin setup has been cleared
     GPIO.cleanup()
 # =======================================================================
-<<<<<<< HEAD
-=======
 
->>>>>>> 7980b57afa9e5a56e714ba8c2b15158585e20670
