@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO # import GPIO librery
-from time import sleep
 import time
 
 def ultra():
